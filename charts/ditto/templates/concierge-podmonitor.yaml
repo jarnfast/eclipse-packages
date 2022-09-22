@@ -20,9 +20,10 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ include "ditto.name" . }}-concierge
 {{ include "ditto.labels" . | indent 4 }}
+{{ include "ditto.podMonitorLabels" .Values.concierge | indent 4 }}
 spec:
   podMetricsEndpoints:
-  - targetPort: {{ .Values.global.prometheus.port }}
+  - port: tcp-metrics
     path: "/"
     {{- if .Values.concierge.podMonitor.interval }}
     interval: {{ .Values.concierge.podMonitor.interval }}

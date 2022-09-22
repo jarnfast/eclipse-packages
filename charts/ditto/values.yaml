@@ -228,6 +228,7 @@ concierge:
   ## when enabled podMonitor resource to scrape concierge will be created
   podMonitor:
     enabled: false
+    additionalLabels: {}
   #  interval: 30s
   #  scrapeTimeout: 15s
 
@@ -317,6 +318,7 @@ connectivity:
   ## when enabled podMonitor resource to scrape connectivity will be created
   podMonitor:
     enabled: false
+    additionalLabels: {}
   #  interval: 30s
   #  scrapeTimeout: 15s
 
@@ -421,6 +423,7 @@ gateway:
   ## when enabled podMonitor resource to scrape concierge will be created
   podMonitor:
     enabled: false
+    additionalLabels: {}
   #  interval: 30s
   #  scrapeTimeout: 15s
 
@@ -573,6 +576,7 @@ policies:
   ## when enabled podMonitor resource to scrape policies will be created
   podMonitor:
     enabled: false
+    additionalLabels: {}
   #  interval: 30s
   #  scrapeTimeout: 15s
 
@@ -704,6 +708,7 @@ things:
   ## when enabled podMonitor resource to scrape things will be created
   podMonitor:
     enabled: false
+    additionalLabels: {}
   #  interval: 30s
   #  scrapeTimeout: 15s
 
@@ -790,6 +795,7 @@ thingsSearch:
   ## when enabled podMonitor resource to scrape things-search will be created
   podMonitor:
     enabled: false
+    additionalLabels: {}
   #  interval: 30s
   #  scrapeTimeout: 15s
 

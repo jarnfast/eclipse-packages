@@ -53,3 +53,15 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+PodMonitor labels
+- (mandatory) "podMonitor": the podMonitors's configuration properties from the values.yaml file
+*/}}
+{{- define "ditto.podMonitorLabels" -}}
+{{- if .podMonitor.labels }}
+{{- with .podMonitor.labels }}
+{{ toYaml . }}
+{{- end }}
+{{- end }}
+{{- end -}}

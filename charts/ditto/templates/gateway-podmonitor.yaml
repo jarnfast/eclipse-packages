@@ -19,9 +19,10 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ include "ditto.name" . }}-gateway
 {{ include "ditto.labels" . | indent 4 }}
+{{ include "ditto.podMonitorLabels" .Values.gateway | indent 4 }}
 spec:
   podMetricsEndpoints:
-  - targetPort: {{ .Values.global.prometheus.port }}
+  - port: tcp-metrics
     path: "/"
     {{- if .Values.gateway.podMonitor.interval }}
     interval: {{ .Values.gateway.podMonitor.interval }}
